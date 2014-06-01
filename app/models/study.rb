@@ -1,6 +1,6 @@
 class Study < ActiveRecord::Base
 
-  validates :image, :presence => true
+  # validates :image, :presence => true
 
   validates :user_id, :presence => true
 
