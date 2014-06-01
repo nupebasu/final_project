@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Body parts</h1>
+</div>
+
+<p><a href="/body_parts/new" class="btn btn-primary">Add a New Body Part</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Part</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @body_parts.each do |body_part| %>
+      <tr>
+        <td><%= body_part.part %></td>
+        <td>
+          <a href="/body_parts/<%= body_part.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/body_parts/<%= body_part.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_body_part/<%= body_part.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

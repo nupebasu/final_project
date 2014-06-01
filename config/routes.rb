@@ -1,4 +1,58 @@
 Rails.application.routes.draw do
+  # Routes for the Study resource:
+  # CREATE
+  get('/studies/new', { :controller => 'studies', :action => 'new' })
+  post('/create_study', { :controller => 'studies', :action => 'create' })
+
+  # READ
+  get('/studies', { :controller => 'studies', :action => 'index' })
+  get('/studies/:id', { :controller => 'studies', :action => 'show' })
+
+  # UPDATE
+  get('/studies/:id/edit', { :controller => 'studies', :action => 'edit' })
+  get('/update_study/:id', { :controller => 'studies', :action => 'update' })
+
+  # DELETE
+  get('/delete_study/:id', { :controller => 'studies', :action => 'destroy' })
+  #------------------------------
+
+  devise_for :users
+  root 'studies#index'
+
+  # Routes for the Category resource:
+  # CREATE
+  get('/categories/new', { :controller => 'categories', :action => 'new' })
+  get('/create_category', { :controller => 'categories', :action => 'create' })
+
+  # READ
+  get('/categories', { :controller => 'categories', :action => 'index' })
+  get('/categories/:id', { :controller => 'categories', :action => 'show' })
+
+  # UPDATE
+  get('/categories/:id/edit', { :controller => 'categories', :action => 'edit' })
+  get('/update_category/:id', { :controller => 'categories', :action => 'update' })
+
+  # DELETE
+  get('/delete_category/:id', { :controller => 'categories', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Body_part resource:
+  # CREATE
+  get('/body_parts/new', { :controller => 'body_parts', :action => 'new' })
+  get('/create_body_part', { :controller => 'body_parts', :action => 'create' })
+
+  # READ
+  get('/body_parts', { :controller => 'body_parts', :action => 'index' })
+  get('/body_parts/:id', { :controller => 'body_parts', :action => 'show' })
+
+  # UPDATE
+  get('/body_parts/:id/edit', { :controller => 'body_parts', :action => 'edit' })
+  get('/update_body_part/:id', { :controller => 'body_parts', :action => 'update' })
+
+  # DELETE
+  get('/delete_body_part/:id', { :controller => 'body_parts', :action => 'destroy' })
+  #------------------------------
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

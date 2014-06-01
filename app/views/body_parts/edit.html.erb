@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Edit Body Part #<%= @body_part.id %></h1>
+</div>
+
+<% if @body_part.errors.any? %>
+  <% @body_part.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_body_part/<%= @body_part.id %>" class="form-horizontal">
+  <!-- Label and input for part -->
+  <div class="form-group">
+    <label for="part" class="col-sm-2 control-label">
+      Part
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="part" name="part" placeholder="Part" class="form-control" value="<%= @body_part.part %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Body Part" class="btn btn-primary">
+    </div>
+  </div>
+</form>
