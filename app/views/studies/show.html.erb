@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Study #<%= @study.id %></h1>
+  <h1><%= @study.diagnosis %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -16,7 +16,7 @@
   <dd><%= @study.diagnosis %></dd>
 
   <dt>Image</dt>
-  <dd><%= @study.image %></dd>
+  <dd><img src="<%= @study.image %>" width="300"></dd>
 
   <dt>Clinical history</dt>
   <dd><%= @study.clinical_history %></dd>
