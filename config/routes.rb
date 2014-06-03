@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # UPDATE
   get('/studies/:id/edit', { :controller => 'studies', :action => 'edit' })
-  get('/update_study/:id', { :controller => 'studies', :action => 'update' })
+  post('/update_study/:id', { :controller => 'studies', :action => 'update' })
 
   # DELETE
   get('/delete_study/:id', { :controller => 'studies', :action => 'destroy' })
