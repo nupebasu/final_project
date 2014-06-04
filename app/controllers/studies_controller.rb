@@ -1,4 +1,18 @@
 class StudiesController < ApplicationController
+
+before_action(:signed_in_user_must_be_owner, :only=> [:edit, :destroy, :update])
+
+def search
+    @keyword = params[:keyword]
+    @studies = Study.where("diagnosis LIKE '%#{@keyword}'")
+
+end
+
+#   def signed_in_user_must_be_owner
+#     if @study.user_id!= current_user.id
+#       redirect_to root_url, :notice => "No privileges"
+# end
+
   def index
     @studies = Study.all
   end

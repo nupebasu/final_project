@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get('studies/search', {:})
+  get('studies/search', {:controller => 'studies', :action => "search"})
 
   # Routes for the Study resource:
   # CREATE
