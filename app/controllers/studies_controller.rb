@@ -13,7 +13,7 @@ class StudiesController < ApplicationController
 
   def create
     @study = Study.new
-    @study.user_id = params[:user_id]
+    @study.user_id = current_user.id
     @study.subject = params[:subject]
     @study.accession = params[:accession]
     @study.diagnosis = params[:diagnosis]
@@ -37,7 +37,7 @@ class StudiesController < ApplicationController
   def update
     @study = Study.find(params[:id])
 
-    @study.user_id = params[:user_id]
+    @study.user_id = current_user.id
     @study.subject = params[:subject]
     @study.accession = params[:accession]
     @study.diagnosis = params[:diagnosis]
