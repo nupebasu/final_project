@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <!-- <th>User</th> -->
+      <th>Case Id</th>
       <th>Subject</th>
       <!-- <th>Accession</th> -->
       <th>Diagnosis</th>
@@ -26,10 +27,11 @@
     <% @studies.each do |study| %>
       <tr>
         <!-- <td><%= study.user_id %></td> -->
+        <td><%= study.id%></td>
         <td><%= study.subject %></td>
         <!-- <td><%= study.accession %></td> -->
         <td><%= study.diagnosis %></td>
-        <td><img src="<%= study.image %>" width="80"></td>
+        <td><img src="<%= study.image %>" width="60"></td>
         <td><%= study.clinical_history %></td>
         <!-- <td><%= study.date %></td> -->
         <!-- <td><%= study.category_id %></td>
