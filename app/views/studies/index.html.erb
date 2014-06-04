@@ -47,8 +47,7 @@
           </a>
         </td>
         <td>
-          <a href="/delete_study/<%= study.id %>" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
+          <a <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, "delete_study/#{study.id}", data: { confirm: 'Are you sure?'}, :class => "btn btn-danger" %>
           </a>
         </td>
       </tr>
