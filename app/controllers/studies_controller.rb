@@ -6,6 +6,7 @@ def search
     @keyword = params[:keyword]
     @studies = Study.where("diagnosis LIKE '%#{@keyword}'")
 
+render 'index'
 end
 
 #   def signed_in_user_must_be_owner
