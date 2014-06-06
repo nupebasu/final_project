@@ -2,6 +2,13 @@
   <h1>Studies Log</h1>
 </div>
 
+<form>
+  <input name="diagnosis" placeholder="Diagnosis" class="form-control" value="<%=@diagnosis%>">
+  <input name="subject" placeholder="Subject" class="form-control" value="<%=@subject%>">
+  <input type="submit" value="Filter" class="btn btn-primary">
+</form>
+
+
 <p><a href="/studies/new" class="btn btn-primary">Add a New Study</a></p>
 
 <table class="table table-hover">

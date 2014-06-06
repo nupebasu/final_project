@@ -1,7 +1,7 @@
 class Study < ActiveRecord::Base
 
   validates :diagnosis, :presence => true
-  validates :suject, :presence => true
+  validates :subject, :presence => true
   validates :accession, :uniqueness => true
 
   belongs_to :user

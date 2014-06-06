@@ -1,13 +1,13 @@
 class StudiesController < ApplicationController
 
-before_action(:signed_in_user_must_be_owner, :only=> [:edit, :destroy, :update])
+# before_action(:signed_in_user_must_be_owner, :only=> [:edit, :destroy, :update])
 
-def search
-    @keyword = params[:keyword]
-    @studies = Study.where("diagnosis LIKE '%#{@keyword}'")
+# def search
+#     @keyword = params[:keyword]
+#     @studies = Study.where("diagnosis LIKE '%#{@keyword}'")
 
-render 'index'
-end
+#   render 'index'
+# end
 
 #   def signed_in_user_must_be_owner
 #     if @study.user_id!= current_user.id
@@ -15,7 +15,10 @@ end
 # end
 
   def index
-    @studies = Study.all
+    @diagnosis = params[:diagnosis]
+    @subject = params[:subject]
+
+    @studies = Study.where("diagnosis LIKE '%#{@diagnosis}%'").where("subject LIKE '%#{@subject}%'")
   end
 
   def show
