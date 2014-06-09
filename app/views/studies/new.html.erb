@@ -92,11 +92,11 @@
       Category
     </label>
     <div class="col-sm-10">
-      <input type="text" id="category" name="category" placeholder="Category" class="form-control" value="<%= @study.category_id %>">
+      <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :content, @study.category_id), :class=> "form-control" %>
     </div>
   </div>
 
-  <!-- Label and input for body_part_id -->
+  <!-- Label and input for body_part -->
   <div class="form-group">
     <label for="body_part_id" class="col-sm-2 control-label">
       Body part
