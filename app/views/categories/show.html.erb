@@ -2,6 +2,13 @@
   <h1><%= @category.content %></h1>
 </div>
 
+<form>
+  <input name="diagnosis" placeholder="Diagnosis" class="form-control" value="<%=@diagnosis%>">
+  <input name="subject" placeholder="Subject" class="form-control" value="<%=@subject%>">
+  <input type="submit" value="Filter" class="btn btn-primary">
+</form>
+
+
 <dl class="dl-horizontal">
 </dl>
 <table class="table table-striped table-hover"
