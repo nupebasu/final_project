@@ -1,6 +1,11 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    # @diagnosis= params[:diagnosis]
+    # @subject= params[:subject]
+
+    # @categories= Category.where("diagnosis LIKE '%#{@diagnosis}%'").where("subject LIKE '%#{@subject}%'")
+
   end
 
   def show
